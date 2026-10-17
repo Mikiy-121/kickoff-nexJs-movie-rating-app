@@ -171,3 +171,34 @@ h1, h2, h3 { margin: 0 0 0.75em; font-weight: 700; }
   .movie-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .anime-meta { display: none; }
 }
+
+/* Leaderboard Tabs */
+.leaderboard-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tab-btn {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  border-color: var(--text-dim);
+  color: var(--text);
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
