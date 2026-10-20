@@ -1,11 +1,5 @@
 "use client";
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  Suspense,
-} from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
@@ -31,11 +25,9 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <Suspense fallback={<div>Loading auth...</div>}>
-      <AuthContext.Provider value={{ user, login, logout }}>
-        {children}
-      </AuthContext.Provider>
-    </Suspense>
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
   );
 }
 
