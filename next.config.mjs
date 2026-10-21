@@ -7,6 +7,9 @@ const nextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   reactCompiler: true,
+  images: {
+    remotePatterns: [new URL("https://cdn.myanimelist.net/images/**")],
+  },
   turbopack: {
     rules: {
       "*.css": {

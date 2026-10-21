@@ -57,9 +57,13 @@ export default function Navbar() {
   return (
     <Suspense
       fallback={
-        <div style={{ padding: "1rem", background: "var(--surface)" }}>
-          Loading...
-        </div>
+        <header className="navbar">
+          <div className="navbar-inner">
+            <Link href="/" className="brand">
+              Kickoff <span>Anime</span>
+            </Link>
+          </div>
+        </header>
       }
     >
       <NavbarContent />

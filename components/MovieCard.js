@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 
-export default function MovieCard({ anime }) {
+export default function MovieCard({ anime, priority = false }) {
   if (!anime) return null;
   const imageUrl = anime.images?.jpg?.image_url;
   const score = anime.score ? anime.score.toFixed(1) : "N/A";
@@ -9,7 +10,13 @@ export default function MovieCard({ anime }) {
     <Link href={`/anime/${anime.mal_id}`} className="movie-card">
       <div className="poster-frame">
         {imageUrl ? (
-          <img src={imageUrl} alt={anime.title} loading="lazy" />
+          <Image
+            src={imageUrl}
+            alt={anime.title}
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 220px"
+            loading={priority ? "eager" : "lazy"}
+          />
         ) : (
           <div
             style={{
